@@ -6,11 +6,82 @@
 
 body {
     font-family: 'Noto Sans', sans-serif;
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     height: 100vh;
     margin: 0;
+}
+
+.searchbar {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    border: transparent;
+}
+
+.search {
+    position: relative;
+    color: white;
+    border: white 1px solid;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    transition: width 0.3s ease;
+}
+
+.search .input {
+    background: transparent;
+    border: 0;
+    color: white;
+    font-size: 18px;
+    padding: 16px;
+    height: 50px;
+    width: 50px;
+    transition-delay: 1s;
+    transition: width 0.3 ease;
+}
+
+::placeholder {
+    color: rgb(255, 255, 255);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    /* Firefox */
+}
+
+.btn {
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 48px;
+    width: 48px;
+    padding: 0px;
+    transition: transform 0.3s ease;
+}
+
+.btn:focus,
+.input:focus {
+    outline: none;
+}
+
+
+.search.active {
+    border: white 1px solid;
+    width: 200px;
+}
+
+.search.active .input {
+    width: 200px;
+}
+
+.search.active ::placeholder {
+    opacity: 1;
 }
